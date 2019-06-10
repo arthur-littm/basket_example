@@ -1,0 +1,5 @@
+<div class="container">
+  <h1><%= @product.name %></h1>
+  <span class="badge badge-primary"><%= @product.price %></span>
+  <%= link_to "Add this shit to my basket", product_orders_path(@product), method: :post, class: "btn btn-primary"  %>
+</div>

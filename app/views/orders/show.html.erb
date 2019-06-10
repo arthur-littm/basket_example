@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Order number <%= @order.id %></h1>
+  <ul>
+    <% @order.ordered_products.each do |op| %>
+
+      <li>
+        <%= op.product.name %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Shop some more", products_path  %>
+</div>
