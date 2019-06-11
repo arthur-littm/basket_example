@@ -1,12 +1,17 @@
 <div class="container">
   <h1>Order number <%= @order.id %></h1>
   <ul>
-    <% @order.ordered_products.each do |op| %>
+    <% @order.products.each do |p| %>
 
       <li>
-        <%= op.product.name %>
+        <%= p.name %>   <span class="badge badge-primary"><%= p.price %></span>
+
       </li>
     <% end %>
   </ul>
+
+  <%= link_to "pay", order_path(@order), method: :patch, class: "btn btn-primary"  %>
+
+
   <%= link_to "Shop some more", products_path  %>
 </div>
